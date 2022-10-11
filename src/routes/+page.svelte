@@ -1,24 +1,25 @@
 <script lang="ts">
-  // data is a object of objects
-  export let data: any;
+  import type { Product } from '@prisma/client';
+  type Data = {
+    products: Product[];
+  };
 
-  const products: any = [];
+  // data will a always a object
+  export let data: Data;
 
-  for (const key in data) {
-    products.push(data[key]);
-  }
+  const { products } = data;
+
   console.log(products);
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
-<section>
-  <h2>Productos</h2>
-  <ul>
-    {#each products as item}
-      <li>{item.name}</li>
-    {/each}
-  </ul>
-</section>
+<main class="container mx-auto">
+  <h1 class="text-3xl font-bold">Welcome to SvelteKit</h1>
+  <section>
+    <h2 class="text-xl font-semibold">Productos</h2>
+    <ol class="list-decimal">
+      {#each products as item}
+        <li>{item.name}</li>
+      {/each}
+    </ol>
+  </section>
+</main>

@@ -7,10 +7,15 @@ export const load: Load = async ({ params }) => {
   console.log('Run on the server only');
   const prisma = new PrismaClient();
   const products = await prisma.product.findMany();
+
   if (!products) {
     throw error(404, 'No products found');
   }
-  return products;
+
+  // This always need to return an object
+  return {
+    products,
+  };
 };
 
 /** @type {import('./$types').Actions} */
