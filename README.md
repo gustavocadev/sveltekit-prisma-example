@@ -7,7 +7,7 @@ Learn full stack web development with SvelteKit.
 🧑‍🤝‍🧑 Clone the project
 
 ```sh
-git clone https://github.com/joysofcode/sveltekit-for-beginners.git
+git clone https://github.com/gustavocadev/sveltekit-prisma-example
 ```
 
 📦️ Install dependencies
@@ -44,7 +44,7 @@ npx prisma studio
 
 ## Development
 
-🦄 Start the project and open http://localhost:3000/
+🦄 Start the project and open http://localhost:5173/
 
 ```sh
 npm run dev
